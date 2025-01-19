@@ -12,3 +12,4 @@ C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Calculator -
 C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Calculator - Begginer Project\CSharpCalculator\obj\Debug\net9.0\CSharpCalculator.pdb
 C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Calculator - Begginer Project\CSharpCalculator\obj\Debug\net9.0\CSharpCalculator.genruntimeconfig.cache
 C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Calculator - Begginer Project\CSharpCalculator\obj\Debug\net9.0\ref\CSharpCalculator.dll
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Calculator - Begginer Project\CSharpCalculator\obj\Debug\net9.0\CSharpCalculator.sourcelink.json

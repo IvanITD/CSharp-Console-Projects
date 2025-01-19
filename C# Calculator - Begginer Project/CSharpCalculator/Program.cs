@@ -1,192 +1,217 @@
 ﻿// variables for later user
+double firstNumber = 0;
+double secondNumber = 0;
 double result = 0.0;
 string operation = "";
-bool isValidKey;
+bool isValidStartKey;
 bool isValidOperator;
-bool isValidNumber;
-int firstNumber = 0;
-int secondNumber = 0;
+bool isValidEndKey;
+bool exitingProgram;
+bool isValidFirstNumber;
+bool isValidSecondNumber;
 
 // Greeting the user
 Console.WriteLine("\nHello, User!");
-Console.WriteLine("Welcome to my first calculator!");
-Console.WriteLine("Press ENTER to continue.");
+Console.WriteLine("\nWelcome to my first calculator!");
+Console.WriteLine("\nPress ENTER to continue.");
 
 //Checking whether the user pressed the ENTER key
-isValidKey = false;
+isValidStartKey = false;
 
-while (!isValidKey)
+while (!isValidStartKey)
 {
     // Pressing Enter to continue
-    ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
+    ConsoleKeyInfo keyStartButton = Console.ReadKey(intercept: true);
 
     // Check if the user pressed the ENTER key
-    if (keyInfo.Key == ConsoleKey.Enter)
+    if (keyStartButton.Key == ConsoleKey.Enter)
     {
         // The user correctly pressed the ENTER key
-        isValidKey = true;
+        isValidStartKey = true;
     }
-    else if (keyInfo.Key == ConsoleKey.Spacebar)
+    else if (keyStartButton.Key == ConsoleKey.Spacebar)
     {
         // The user correctly pressed the SPACEBAR key
-        isValidKey = true;
+        Console.WriteLine("That works too! XD XD");
+        isValidStartKey = true;
     }
     else
     {
         // The user did not press the ENTER key
         Console.WriteLine("Invalid key. Please press ENTER to continue.");
+        Console.Write("\n");
     }
 
 }
 
-// Checking to see if the user didn't enter 0  while using % or / operator
-isValidNumber = false;
-
-// Creating a while loop to check if the user operator input is valid
-isValidOperator = false;
-while (!isValidNumber && isValidOperator || isValidOperator || isValidNumber)
+exitingProgram = false;
+// Repeating the program until the user wants to exit
+while (!exitingProgram)
 {
     // Asking the user to enter the first number
-    Console.WriteLine("In order to proceed, please enter the first number: ");
+    Console.WriteLine("\nPlease enter the first number: ");
 
-    // Creating the first variable and storing the user input
-    firstNumber = int.Parse(Console.ReadLine());
+    // Check whether the user entered only a number
+    isValidFirstNumber = false;
+    while(!isValidFirstNumber)
+    {
+        string number1 = Console.ReadLine();
+
+        if (double.TryParse(number1, out firstNumber))
+        {
+            isValidFirstNumber = true; // Valid input, exit the loop
+        }
+        else
+        {
+            // Inform the user that the input is invalid
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
+    }
 
     // Asking the user to enter the second number
-    Console.WriteLine("Please enter the second number: ");
+    Console.WriteLine("\nPlease enter the second number: ");
 
-    // Creating the second variable and storing the user input
-    secondNumber = int.Parse(Console.ReadLine());
+    // Check whether the user entered only a number
+    isValidSecondNumber = false;
+    while (!isValidSecondNumber)
+    {
+        string number2 = Console.ReadLine();
+
+        if (double.TryParse(number2, out secondNumber))
+        {
+            isValidSecondNumber = true; // Valid input, exit the loop
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
+    }
+
 
     // Asking the user to choose what type of operation they want to perform
     Console.WriteLine("What type of operation would you like to perform?");
     Console.WriteLine("Please enter the number of the operation you would like to perform:");
-
-    // Printing the options to the user
     Console.WriteLine("*    Press 1 for addition ==>> (+)"); // Addition
     Console.WriteLine("*    Press 2 for substraction ==>> (-)"); // Substraction
     Console.WriteLine("*    Press 3 for multiplication ==>> (*)"); // Multiplication
     Console.WriteLine("*    Press 4 for division ==>> (/)"); // Division
     Console.WriteLine("*    Press 5 for modulo ==>> (%)"); // Modulo
 
+    isValidOperator = false;
 
-
-    // Creating the variable for the user input
-    ConsoleKeyInfo keyOperator = Console.ReadKey(intercept: true);
-
-    if (keyOperator.Key == ConsoleKey.D1 || keyOperator.Key == ConsoleKey.Add || keyOperator.KeyChar == '+')
+    while (!isValidOperator)
     {
-        operation = "+";
-        // Performing the addition operation
-        result = firstNumber + secondNumber;
+        // Creating the variable for the user input
+        ConsoleKeyInfo keyOperator = Console.ReadKey(intercept: true);
 
-        // Setting the isValidOperator flag to true for addition
-        isValidOperator = true;
-    }
-    else if (keyOperator.Key == ConsoleKey.D2 || keyOperator.Key == ConsoleKey.Subtract || keyOperator.KeyChar == '-')
-    {
-        operation = "-";
-        // Performing the substraction operation
-        result = firstNumber - secondNumber;
-
-        // Setting the isValidOperator flag to true for substraction
-        isValidOperator = true;
-    }
-    else if (keyOperator.Key == ConsoleKey.D3 || keyOperator.Key == ConsoleKey.Multiply || keyOperator.KeyChar == '*')
-    {
-        operation = "*";
-        // Performing the multiplication operation
-        result = firstNumber * secondNumber;
-
-        // Setting the isValidOperator flag to true for multiplication
-        isValidOperator = true;
-    }
-    else if (keyOperator.Key == ConsoleKey.D4 || keyOperator.Key == ConsoleKey.Divide || keyOperator.KeyChar == '/')
-    {
-        operation = "/";
-        // Performing the division operation
-        result = firstNumber / secondNumber;
-
-        // Setting the isValidOperator flag to true for division
-        isValidOperator = true;
-    }
-    else if (keyOperator.Key == ConsoleKey.D5 || keyOperator.KeyChar == '%')
-    {
-        operation = "%";
-        // Performing the modulo operation
-        result = firstNumber % secondNumber;
-
-        // Setting the isValidOperator flag to true for modulo
-        isValidOperator = true;
-    }
-    else
-    {
-        // If the user input is not valid, ask the user to enter a valid operator
-        Console.WriteLine("Invalid operator. Please enter a valid operator.");
-    }
-
-    // Checking if the user entered 0 while using % or / operator
-    if (firstNumber == 0 || secondNumber == 0 || firstNumber == 0 && secondNumber == 0)
-    {
-        // Checking if the user entered 0 while using % or / operator
-        while (operation == "%" || operation == "/")
+        if (keyOperator.Key == ConsoleKey.D1 || keyOperator.Key == ConsoleKey.Add || keyOperator.KeyChar == '+')
         {
-            // Inform the user that they cannot use 0 while using % or / operator
-            Console.WriteLine("Error: Cannot divide by zero!");
+            operation = "+";
+            result = firstNumber + secondNumber;
+            isValidOperator = true;
+        }
+        else if (keyOperator.Key == ConsoleKey.D2 || keyOperator.Key == ConsoleKey.Subtract || keyOperator.KeyChar == '-')
+        {
+            operation = "-";
+            result = firstNumber - secondNumber;
+            isValidOperator = true;
+        }
+        else if (keyOperator.Key == ConsoleKey.D3 || keyOperator.Key == ConsoleKey.Multiply || keyOperator.KeyChar == '*')
+        {
+            operation = "*";
+            result = firstNumber * secondNumber;
+            isValidOperator = true;
+        }
+        else if (keyOperator.Key == ConsoleKey.D4 || keyOperator.Key == ConsoleKey.Divide || keyOperator.KeyChar == '/')
+        {
+            if (secondNumber == 0)
+            {
+                Console.WriteLine("Division by zero is not allowed. Please enter a valid second number.");
+                isValidOperator = false;
+            }
+            else
+            {
+                operation = "/";
+                result = firstNumber / secondNumber;
+                isValidOperator = true;
+            }
+
+        }
+        else if (keyOperator.Key == ConsoleKey.D5 || keyOperator.KeyChar == '%')
+        {
+
+            if (secondNumber == 0)
+            {
+                Console.WriteLine("Modulo by zero is not allowed. Please enter a valid second number.");
+                isValidOperator = false;
+            }
+            else
+            {
+                operation = "%";
+                result = firstNumber % secondNumber;
+                isValidOperator = true;
+            }
+        }
+        else
+        {
+            // If the user input is not valid, ask the user to enter a valid operator
+            Console.WriteLine("Invalid operator. Please enter a valid operator.");
+            isValidOperator = false;
+        }
+
+        //isValidOperator = false;
+    }
+
+    // Printing the result to the user
+    Console.Write("\nCALULATING....");
+    Console.Write($" {firstNumber} {operation} {secondNumber} = {result}");
+    Console.WriteLine("\n");
+    // Telling the user to press ENTER to perform another operation ESC to exit the program
+    Console.WriteLine("If you would like to perform another operation, please press ENTER.");
+    Console.WriteLine("Or");
+    Console.WriteLine("If you would like to exit the program, please press ESC.");
+
+
+    // Creating a while loop to check if the user pressed either the ENTER or ESC key
+    isValidEndKey = false;
+    while (!isValidEndKey)
+    {
+        // Waiting for the user to press a key
+        ConsoleKeyInfo keyEndButton = Console.ReadKey(intercept: true); // The 'true' prevents the key from being displayed.
+
+        // Check if the user pressed the ESC key
+        if (keyEndButton.Key == ConsoleKey.Enter)
+        {
+            // Clearing the console
+            Console.Clear(); // This command clears the console.
+
+            // The user correctly pressed the ENTER key
+            isValidEndKey = true;
+        }
+        else if (keyEndButton.Key == ConsoleKey.Spacebar)
+        {
+            // Clearing the console
+            Console.Clear(); // This command clears the console.
+            Console.WriteLine("That SPACEBAR seems to always work! XD XD");
+
+            // The user correctly pressed the SPACEBAR key, end made a joke out of it!!! XD XD
+            isValidEndKey = true;
+        }
+        else if (keyEndButton.Key == ConsoleKey.Escape)
+        {
+            // Clearing the console
+            Console.Clear();
+
+            // Exiting the program
+            Console.WriteLine("\nExiting the program...");
+            Console.WriteLine("\nThank you for using my calculator! Have a great day!\n");
+            isValidEndKey = true;
+            exitingProgram = true;
+        }
+        else
+        {
+            // Informing the user that they pressed an invalid key
+            Console.WriteLine("Invalid key. Please press either the ENTER or ESC key.");
         }
     }
-
-
-}
-
-// Printing the result to the user
-Console.WriteLine($"{firstNumber} {operation} {secondNumber} = {result}");
-Console.WriteLine();
-// Telling the user to press ENTER to perform another operation ESC to exit the program
-Console.WriteLine("If you would like to perform another operation, please press ENTER.");
-Console.WriteLine("Or");
-Console.WriteLine("If you would like to exit the program, please press ESC.");
-
-// Creating a while loop to check if the user pressed either the ENTER or ESC key
-isValidKey = false;
-while (!isValidKey)
-{
-    // Waiting for the user to press a key
-    ConsoleKeyInfo keyOperator = Console.ReadKey(intercept: true); // The 'true' prevents the key from being displayed.
-
-    // Check if the user pressed the ESC key
-    if (keyOperator.Key == ConsoleKey.Escape)
-    {
-        // Clearing the console
-        Console.Clear();
-
-        // Exiting the program
-        Console.WriteLine("\nExiting the program...");
-
-        // The user correctly pressed the ESC key
-        isValidKey = true;
-    }
-    else if (keyOperator.Key == ConsoleKey.Enter)
-    {
-        // Clearing the console
-        Console.Clear(); // This command clears the console.
-
-        // The user correctly pressed the ENTER key
-        isValidKey = true;
-    }
-    else if (keyOperator.Key == ConsoleKey.Spacebar)
-    {
-        // Clearing the console
-        Console.Clear(); // This command clears the console.
-        Console.WriteLine("That works too! XD XD");
-
-        // The user correctly pressed the SPACEBAR key, end made a joke out of it!!! XD XD
-        isValidKey = true;
-    }
-    else
-    {
-        // Informing the user that they pressed an invalid key
-        Console.WriteLine("Invalid key. Please press either the ENTER or ESC key.");
-    }
-
 }
