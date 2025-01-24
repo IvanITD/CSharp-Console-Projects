@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpCalculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35ad23f7cc52c22619c7de4747d7d83fc65f34e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+950f9591e343e872ec8f9033cbc482a218e0c1c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpCalculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpCalculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

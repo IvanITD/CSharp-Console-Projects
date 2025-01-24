@@ -9,7 +9,10 @@ bool exitingProgram;
 
 // Greeting the user
 Console.WriteLine("\nHello, User!");
+// Adding a delay in order for the user to read the greeting
+System.Threading.Thread.Sleep(2000);
 Console.WriteLine("\nWelcome to my first calculator!");
+System.Threading.Thread.Sleep(2000);
 Console.WriteLine("\nPress ENTER to continue.");
 
 //Checking whether the user pressed the ENTER key
@@ -61,7 +64,14 @@ while (!exitingProgram)
     operation = GetValidOperation(firstNumber, secondNumber, out result);
 
     // Printing the result to the user
-    Console.Write("\nCALULATING....");
+    Console.Write("\nCALULATING");
+    // Adding a delay to make the program look like it is actually calculating
+    System.Threading.Thread.Sleep(500);
+    Console.Write(".");
+    System.Threading.Thread.Sleep(500);
+    Console.Write(".");
+    System.Threading.Thread.Sleep(500);
+    Console.Write(".");
     Console.Write($" {firstNumber} {operation} {secondNumber} = {result}");
     Console.WriteLine("\n");
     // Telling the user to press ENTER to perform another operation ESC to exit the program
@@ -104,6 +114,8 @@ while (!exitingProgram)
 
         // Asking the user to choose what type of operation they want to perform
         Console.WriteLine("What type of operation would you like to perform?");
+        // Creating a delay in order for the user to read the question
+        System.Threading.Thread.Sleep(2000);
         Console.WriteLine("Please enter the number of the operation you would like to perform:");
         Console.WriteLine("*    Press 1 for addition ==>> (+)"); // Addition
         Console.WriteLine("*    Press 2 for substraction ==>> (-)"); // Substraction
@@ -213,7 +225,15 @@ while (!exitingProgram)
                 Console.Clear();
 
                 // Exiting the program
-                Console.WriteLine("\nExiting the program...");
+                // Adding a delay to make the program look like it is actually exiting
+                Console.Write("\nExiting the program");
+                System.Threading.Thread.Sleep(500);
+                Console.Write(".");
+                System.Threading.Thread.Sleep(500);
+                Console.Write(".");
+                System.Threading.Thread.Sleep(500);
+                Console.Write(".");
+                System.Threading.Thread.Sleep(500);
                 Console.WriteLine("\nThank you for using my calculator! Have a great day!\n");
                 isValidEndKey = true;
                 exitingProgram = true;
