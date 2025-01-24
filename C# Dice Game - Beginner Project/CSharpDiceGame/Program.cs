@@ -1,8 +1,20 @@
-﻿// Include the a while loop in order to continue rolling the dice until the user decides to stop
+﻿// Variables for later user
+int userPoints = 0;
+int computerPoints = 0;
+
+// Welcome the user to the rolling dice game
+  Console.WriteLine("\nHello User!");
+  
+  // Adding delay so that the user can read the welcome message
+  System.Threading.Thread.Sleep(2000);
+  Console.ForegroundColor = ConsoleColor.Cyan;
+  Console.WriteLine("WELCOME TO MY ROLLING DICE GAME");
+  System.Threading.Thread.Sleep(2000);
+
+// Include the a while loop in order to continue rolling the dice until the user decides to stop
 bool ProgramIsRunning = false;
 while (!ProgramIsRunning)
 {
-
   for (int i = 0; i < 10; i++)
   {
     // Inform the user to roll the dice
@@ -33,11 +45,51 @@ while (!ProgramIsRunning)
 
     int computerNumber = randomNumber.Next(1, 7);
     // Informing the user of the random number the computer AI rolled
-    Console.ForegroundColor = ConsoleColor.Red;
+    Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine($"\nThe AI Computer rolled a {computerNumber}");
     Console.WriteLine();
 
+    // Create a if statement to determine who won the game
+  if (userNumber > computerPoints)
+  {
+    userPoints++;
   }
+  else if (computerNumber > userPoints)
+  {
+    computerPoints++;
+  }
+
+  }
+  // Reset the color of the text back to normal!
+  Console.ResetColor();
+  // Changing the color to pink to inform the user of the current score
+  Console.ForegroundColor = ConsoleColor.Magenta;
+  // Inform the user of the current score
+  Console.WriteLine($"Your Points: {userPoints}");
+  // Restoring the color for the dots
+  Console.ResetColor();
+  System.Threading.Thread.Sleep(500);
+  Console.Write(".");
+  System.Threading.Thread.Sleep(500);
+  Console.Write(".");
+  System.Threading.Thread.Sleep(500);
+  Console.Write(".");
+
+
+  // Set the color to red to inform the user of the computer AI's current score
+  Console.ForegroundColor = ConsoleColor.Red;
+  // Inform the user of the computer AI's current score
+  Console.WriteLine();
+  Console.WriteLine($"The AI Computer's Points: {computerPoints}");
+  // Restoring the color for the dots
+  Console.ResetColor();
+  System.Threading.Thread.Sleep(500);
+  Console.Write(".");
+  System.Threading.Thread.Sleep(500);
+  Console.Write(".");
+  System.Threading.Thread.Sleep(500);
+  Console.Write(".");
+
   // Reset the color of the text back to normal!
   Console.ResetColor();
   // Prompt the user to press the enter the key to continue playing or exit the program
@@ -47,7 +99,7 @@ while (!ProgramIsRunning)
   if (Console.ReadKey(intercept: true).Key == ConsoleKey.Enter)
   {
     // Inform the user that the game is continuing!
-    Console.ForegroundColor = ConsoleColor.Green;
+    Console.ForegroundColor = ConsoleColor.Blue;
     Console.Write("Continuing Game");
     System.Threading.Thread.Sleep(500);
     Console.Write(".");
@@ -55,6 +107,7 @@ while (!ProgramIsRunning)
     Console.Write(".");
     System.Threading.Thread.Sleep(500);
     Console.Write(".");
+    Console.WriteLine();
   }
   else if (Console.ReadKey(intercept: true ).Key == ConsoleKey.Escape)
   {
@@ -67,7 +120,8 @@ while (!ProgramIsRunning)
     Console.Write(".");
     System.Threading.Thread.Sleep(500);
     Console.Write(".");
-
+    Console.WriteLine();
+    
     ProgramIsRunning = true; 
   }
 
