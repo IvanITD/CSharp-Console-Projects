@@ -13,7 +13,7 @@ while (!ProgramIsRunning)
   // Wait for the user to press a key
   Console.ReadKey(intercept: true);
 
-  // Generate a randome number between 1 and 7
+  // Generate a random number between 1 and 7
     Random randomNumber = new Random();
     int userNumber = randomNumber.Next(1, 7);
     // Informing the user of the random number they rolled
