@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ivan Ivanov\\Desktop\\Coding Projects\\C# Console Projects\\C# Dice Game - Begginer Project\\CSharpDiceGame\\CSharpDiceGame.csproj",
+      "projectUniqueName": "C:\\Users\\Ivan Ivanov\\Desktop\\Coding Projects\\C# Console Projects\\C# Dice Game - Beginner Project\\CSharpDiceGame\\CSharpDiceGame.csproj",
       "projectName": "CSharpDiceGame",
-      "projectPath": "C:\\Users\\Ivan Ivanov\\Desktop\\Coding Projects\\C# Console Projects\\C# Dice Game - Begginer Project\\CSharpDiceGame\\CSharpDiceGame.csproj",
+      "projectPath": "C:\\Users\\Ivan Ivanov\\Desktop\\Coding Projects\\C# Console Projects\\C# Dice Game - Beginner Project\\CSharpDiceGame\\CSharpDiceGame.csproj",
       "packagesPath": "C:\\Users\\Ivan Ivanov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ivan Ivanov\\Desktop\\Coding Projects\\C# Console Projects\\C# Dice Game - Begginer Project\\CSharpDiceGame\\obj\\",
+      "outputPath": "C:\\Users\\Ivan Ivanov\\Desktop\\Coding Projects\\C# Console Projects\\C# Dice Game - Beginner Project\\CSharpDiceGame\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
