@@ -18,26 +18,34 @@ while (!ProgramIsRunning)
   for (int i = 0; i < 10; i++)
   {
     // Inform the user to roll the dice
-  Console.WriteLine();
-  Console.ResetColor();
-  Console.WriteLine("Press any key to roll the dice...");
+    Console.WriteLine();
+    Console.ResetColor();
+    Console.WriteLine("Press any key to roll the dice...");
 
-  // Wait for the user to press a key
-  Console.ReadKey(intercept: true);
+    // Wait for the user to press a key
+    Console.ReadKey(intercept: true);
 
-  // Generate a random number between 1 and 7
+    // Inform the user that the dice is rolling
+    Console.Write("Rolling");
+    loadingDots(500, 1, 3);
+
+    // Generate a random number between 1 and 7
     Random randomNumber = new Random();
     int userNumber = randomNumber.Next(1, 7);
+
     // Informing the user of the random number they rolled
     Console.WriteLine();
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine($"You rolled a {userNumber}");
     Console.WriteLine();
+    
     // Rolling
-    Console.Write("Rolling Dice");
+    Console.Write("AI Rolling");
     loadingDots(500, 1, 3);
 
+    // Generate a random number between 1 and 7
     int computerNumber = randomNumber.Next(1, 7);
+    
     // Informing the user of the random number the computer AI rolled
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine($"\nThe AI Computer rolled a {computerNumber}");
