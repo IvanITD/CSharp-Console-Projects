@@ -33,15 +33,9 @@ while (!ProgramIsRunning)
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine($"You rolled a {userNumber}");
     Console.WriteLine();
-    //Make the dice rolling a little more realistic by adding a delay
-    Console.Write("Rolling");
-    Console.Write(".");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    System.Threading.Thread.Sleep(500);
-    Console.WriteLine();
+    // Rolling
+    Console.Write("Rolling Dice");
+    loadingDots(500, 1, 3);
 
     int computerNumber = randomNumber.Next(1, 7);
     // Informing the user of the random number the computer AI rolled
@@ -68,12 +62,7 @@ while (!ProgramIsRunning)
   Console.WriteLine($"Your Points: {userPoints}");
   // Restoring the color for the dots
   Console.ResetColor();
-  System.Threading.Thread.Sleep(500);
-  Console.Write(".");
-  System.Threading.Thread.Sleep(500);
-  Console.Write(".");
-  System.Threading.Thread.Sleep(500);
-  Console.Write(".");
+  loadingDots(500, 1, 3);
 
 
   // Set the color to red to inform the user of the computer AI's current score
@@ -83,12 +72,8 @@ while (!ProgramIsRunning)
   Console.WriteLine($"The AI Computer's Points: {computerPoints}");
   // Restoring the color for the dots
   Console.ResetColor();
-  System.Threading.Thread.Sleep(500);
-  Console.Write(".");
-  System.Threading.Thread.Sleep(500);
-  Console.Write(".");
-  System.Threading.Thread.Sleep(500);
-  Console.Write(".");
+  loadingDots(500, 1, 3);
+  Console.WriteLine();
 
   // Reset the color of the text back to normal!
   Console.ResetColor();
@@ -101,28 +86,35 @@ while (!ProgramIsRunning)
     // Inform the user that the game is continuing!
     Console.ForegroundColor = ConsoleColor.Blue;
     Console.Write("Continuing Game");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    Console.WriteLine();
+    loadingDots(500, 1, 3);
   }
   else if (Console.ReadKey(intercept: true ).Key == ConsoleKey.Escape)
   {
     // Inform the user that the program is exiting!
     Console.ForegroundColor = ConsoleColor.DarkGray;
     Console.Write("Game Closing");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    System.Threading.Thread.Sleep(500);
-    Console.Write(".");
-    Console.WriteLine();
+    loadingDots(500, 1, 3);
     
     ProgramIsRunning = true; 
   }
 
+}
+
+// Methods
+static void loadingDots(int delay, int cycles, int dots)
+{
+    for (int i = 0; i < cycles; i++)
+    {
+        for (int j = 1; j <= dots; j++)
+        {
+            Console.Write('.');
+            System.Threading.Thread.Sleep(delay);
+        }
+        if (i < cycles - 1)
+        {
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(new string(' ', dots));
+            Console.SetCursorPosition(0, Console.CursorTop);
+        }
+    }
 }
