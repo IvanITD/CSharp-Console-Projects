@@ -6,10 +6,10 @@ int computerPoints = 0;
   Console.WriteLine("\nHello User!");
   
   // Adding delay so that the user can read the welcome message
-  System.Threading.Thread.Sleep(2000);
+  System.Threading.Thread.Sleep(1500);
   Console.ForegroundColor = ConsoleColor.Cyan;
   Console.WriteLine("WELCOME TO MY ROLLING DICE GAME");
-  System.Threading.Thread.Sleep(2000);
+  System.Threading.Thread.Sleep(1500);
 
 // Include the a while loop in order to continue rolling the dice until the user decides to stop
 bool ProgramIsRunning = false;
@@ -17,6 +17,8 @@ while (!ProgramIsRunning)
 {
   for (int i = 0; i < 10; i++)
   {
+    // Small delay to make the rolling take a bit more time
+    System.Threading.Thread.Sleep(1000);
     // Inform the user to roll the dice
     Console.WriteLine();
     Console.ResetColor();
@@ -26,7 +28,7 @@ while (!ProgramIsRunning)
     Console.ReadKey(intercept: true);
 
     // Inform the user that the dice is rolling
-    Console.Write("Rolling");
+    Console.Write("\nRolling");
     loadingDots(500, 1, 3);
 
     // Generate a random number between 1 and 7
@@ -34,11 +36,13 @@ while (!ProgramIsRunning)
     int userNumber = randomNumber.Next(1, 7);
 
     // Informing the user of the random number they rolled
-    Console.WriteLine();
     Console.ForegroundColor = ConsoleColor.Blue;
-    Console.WriteLine($"You rolled a {userNumber}");
+    Console.Write($"  You rolled a {userNumber}");
     Console.WriteLine();
     
+    // Creating a small delay to make the rolling take a bit more time
+    System.Threading.Thread.Sleep(1500);
+
     // Rolling
     Console.Write("AI Rolling");
     loadingDots(500, 1, 3);
@@ -48,15 +52,15 @@ while (!ProgramIsRunning)
     
     // Informing the user of the random number the computer AI rolled
     Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine($"\nThe AI Computer rolled a {computerNumber}");
+    Console.Write($"  The AI Computer rolled a {computerNumber}");
     Console.WriteLine();
 
     // Create a if statement to determine who won the game
-  if (userNumber > computerPoints)
+  if (userNumber > computerNumber)
   {
     userPoints++;
   }
-  else if (computerNumber > userPoints)
+  else if (computerNumber > userNumber)
   {
     computerPoints++;
   }
@@ -67,21 +71,40 @@ while (!ProgramIsRunning)
   // Changing the color to pink to inform the user of the current score
   Console.ForegroundColor = ConsoleColor.Magenta;
   // Inform the user of the current score
-  Console.WriteLine($"Your Points: {userPoints}");
+  Console.WriteLine($"Your Points: {userPoints} ||");
   // Restoring the color for the dots
   Console.ResetColor();
-  loadingDots(500, 1, 3);
 
 
   // Set the color to red to inform the user of the computer AI's current score
   Console.ForegroundColor = ConsoleColor.Red;
   // Inform the user of the computer AI's current score
   Console.WriteLine();
-  Console.WriteLine($"The AI Computer's Points: {computerPoints}");
+  Console.Write($"      The AI Computer's Points: {computerPoints}");
   // Restoring the color for the dots
   Console.ResetColor();
   loadingDots(500, 1, 3);
   Console.WriteLine();
+
+  // Check whether the user or the enemy AI has won the game
+  if (userPoints > computerPoints)
+  {
+    // Inform the user that they have won the game
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("YOU WON!\nCongratulations!");
+  }
+  else if (computerPoints > userPoints)
+  {
+    // Inform the user that the computer AI has won the game
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("YOU LOOSE!\nThe AI Computer has won the game!");
+  }
+  else if (userPoints == computerPoints)
+  {
+    // Inform the user that the game is a draw
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("DRAW!\nIt's a draw!");
+  }
 
   // Reset the color of the text back to normal!
   Console.ResetColor();
@@ -107,6 +130,10 @@ while (!ProgramIsRunning)
   }
 
 }
+
+
+
+
 
 // Methods
 static void loadingDots(int delay, int cycles, int dots)
