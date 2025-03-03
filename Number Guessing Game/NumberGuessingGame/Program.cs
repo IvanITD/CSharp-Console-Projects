@@ -4,3 +4,9 @@ Console.WriteLine("Hello user!");
 System.Threading.Thread.Sleep(1500);
 Console.WriteLine("Welcome to my NUMBER GUESSING GAME");
 
+// Creating a while loop in order to make the game playable multiple times.
+bool playAgain = true;
+while (playAgain = true)
+{
+
+}
