@@ -80,7 +80,7 @@ while (!ProgramIsRunning)
   Console.ForegroundColor = ConsoleColor.Red;
   // Inform the user of the computer AI's current score
   Console.WriteLine();
-  Console.Write($"      The AI Computer's Points: {computerPoints}");
+  Console.Write($"The AI Computer's Points: {computerPoints}");
   // Restoring the color for the dots
   Console.ResetColor();
   loadingDots(500, 1, 3);
