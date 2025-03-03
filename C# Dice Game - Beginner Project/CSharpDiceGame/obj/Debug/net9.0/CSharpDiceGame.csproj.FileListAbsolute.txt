@@ -28,3 +28,18 @@ C:/Users/Ivan Ivanov/Desktop/Coding Projects/C# Console Projects/C# Dice Game - 
 /Users/astrosspace/Desktop/Programming Files/VS Code/CSharp-Console-Projects/C# Dice Game - Beginner Project/CSharpDiceGame/obj/Debug/net9.0/CSharpDiceGame.pdb
 /Users/astrosspace/Desktop/Programming Files/VS Code/CSharp-Console-Projects/C# Dice Game - Beginner Project/CSharpDiceGame/obj/Debug/net9.0/CSharpDiceGame.genruntimeconfig.cache
 /Users/astrosspace/Desktop/Programming Files/VS Code/CSharp-Console-Projects/C# Dice Game - Beginner Project/CSharpDiceGame/obj/Debug/net9.0/ref/CSharpDiceGame.dll
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\bin\Debug\net9.0\CSharpDiceGame.exe
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\bin\Debug\net9.0\CSharpDiceGame.deps.json
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\bin\Debug\net9.0\CSharpDiceGame.runtimeconfig.json
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\bin\Debug\net9.0\CSharpDiceGame.dll
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\bin\Debug\net9.0\CSharpDiceGame.pdb
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.AssemblyInfoInputs.cache
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.AssemblyInfo.cs
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.csproj.CoreCompileInputs.cache
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.sourcelink.json
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.dll
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\refint\CSharpDiceGame.dll
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.pdb
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\CSharpDiceGame.genruntimeconfig.cache
+C:\Users\Ivan Ivanov\Desktop\Coding Projects\C# Console Projects\C# Dice Game - Beginner Project\CSharpDiceGame\obj\Debug\net9.0\ref\CSharpDiceGame.dll

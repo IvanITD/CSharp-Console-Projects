@@ -52,7 +52,7 @@ while (!ProgramIsRunning)
     
     // Informing the user of the random number the computer AI rolled
     Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.Write($"  The AI Computer rolled a {computerNumber}");
+    Console.Write($"  The AI {computerNumber}");
     Console.WriteLine();
 
     // Create a if statement to determine who won the game
@@ -130,10 +130,6 @@ while (!ProgramIsRunning)
   }
 
 }
-
-
-
-
 
 // Methods
 static void loadingDots(int delay, int cycles, int dots)
